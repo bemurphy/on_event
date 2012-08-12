@@ -64,8 +64,8 @@ If the admin doesn't get the email that somebody signed up, or Redis is unreacha
 your metrics are temporarily unavailable, your user still signs up.
 
 By overriding the `#rescue_handler` in your `OnEvent` class, you can get shared exception
-handler should any callback fail.  This could be as simple as call to `Rails.logger.error`,
-or trigger Airbrake but still swallowing the exception.
+handling should any callback fail.  This could be as simple as call to `Rails.logger.error`,
+or triggering Airbrake but still swallowing the exception.
 
 Often these callbacks are packaged into lifecycle on a model;  however, it is sometimes
 the case where you only want them firing in the specific context of a controller.  For
