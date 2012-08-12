@@ -41,6 +41,7 @@ class OnEvent
           event_blocks[event_name.to_sym].each do |block|
             with_rescue { block.call *args }
           end
+          true
         end
       end
     end

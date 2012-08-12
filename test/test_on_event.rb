@@ -22,6 +22,12 @@ class TestOnEvent < Test::Unit::TestCase
     assert_equal %w[f1 f2 b1 b2], a
   end
 
+  def test_callback_events_returns_true
+    subject = OnEvent.new(:foo)
+    subject.on_foo { "f1" }
+    assert_instance_of TrueClass, subject.foo()
+  end
+
   def test_adding_establish_event_alias
     subject = OnEvent.new
     subject.establish_event(:foo)
